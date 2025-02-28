@@ -74,12 +74,6 @@ async function main(){
 
 
 
-app.use((err,req,res,next)=>{
-    console.log(err.message);
-    let {statusCode=500,message="something went wrong!"} = err;
-    res.status(statusCode).render("error.ejs",{err});
-// res.status(statusCode).send(message);
-})
 
 app.listen(8080,()=>{
     console.log("Server is listeing to port 8080");
