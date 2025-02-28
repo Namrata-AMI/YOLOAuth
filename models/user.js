@@ -19,10 +19,17 @@ const userSchema = new mongoose.Schema({
     birthDate: {
         type: Date,
         required: true,
+        validate: {
+            validator: function (value) {
+                return value <= new Date(); // future dates not tot be selected...//
+            },
+            message: "Birthdate cannot be in the future!",
+        },
     },
     gender: {
         type: String,
         required: true,
+        enum: ["Male", "Female", "Other"], 
     },
     description: {
         type: String,
@@ -32,4 +39,3 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", userSchema);
-
