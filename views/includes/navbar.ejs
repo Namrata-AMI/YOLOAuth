@@ -1,0 +1,22 @@
+
+
+<nav class="navbar navbar-expand-md sticky-top bg-white shadow" style="height:5rem; z-index: 1050;">
+    <div class="container-fluid d-flex">
+        <span class="navbar-brand mb-0 h1"><a href="/" style="text-decoration: none; color:black; z-index:1000;">YOLOAuth <i class="fa-solid fa-certificate" style="color: #5f88ce; font-size:2.5rem; padding:0.4rem;"></i></a></span>
+    
+    <div class="d-flex">
+        <div class="navbar-nav ms-auto links">
+            <% if(!newUser){ %>
+              <a class="nav-link" href="/signup"><b>Sign-Up</b></a>
+              <a class="nav-link" href="/login"><b>Log-In</b></a>
+            <% } %>
+                
+         
+            <%  if(newUser){ %>
+                <a class="nav-link" href="/edit-profile">Edit profile <i class="fa-solid fa-user" style="color: #61779e;"></i></a>
+                <a class="nav-link" href="/logout">Log Out</a>
+            <% } %>  
+        </div>
+    </div>
+</div>
+</nav>

@@ -1,0 +1,35 @@
+<%- layout("/layouts/boilerplate") %>
+
+
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4 col-8 offset-2" style="font-size:2.4rem;">Edit Your Profile on <b style="color:#376f9a; font-size:4rem;">YOLOAuth</b> </h2>
+    <div class="col-8 offset-2">
+    <form action="/edit-profile" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input type="date" class="form-control" id="birthDate" name="birthDate" value="<%= user.birthDate %>" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="Male" <%= user.gender === "Male" ? "selected" : "" %>>Male</option>
+                <option value="Female" <%= user.gender === "Female" ? "selected" : "" %>>Female</option>
+                <option value="Other" <%= user.gender === "Other" ? "selected" : "" %>>Other</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"><%= user.description %></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="background-color: #376f9a;">Update Profile</button>
+    </form>
+    </div>
+</div>

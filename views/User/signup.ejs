@@ -1,0 +1,61 @@
+<%- layout("/layouts/boilerplate") %>
+
+<div class="row mt-3 mb-5">
+    <h1 class="col-6 offset-3 mb-3"> Sign-Up on <b style="color:#376f9a; font-size:4rem;">YOLOAuth</b></h1>
+    <div class="col-6 offset-3">
+                <form method="post" action="/signup" class="needs-validation" novalidate>
+                    
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" placeholder="Enter username" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a valid username.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" placeholder="Enter email" id="email" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" placeholder="Enter password" id="password" minlength="8" class="form-control" required>
+                        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your name" id="name" class="form-control" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="birthDate" class="form-label">Birth Date</label>
+                        <input type="date" name="birthDate" id="birthDate" class="form-control" required>
+                        <div class="invalid-feedback">Please select your birth date.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select name="gender" id="gender" class="form-select" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">Please select your gender.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea type="text" name="description" class="form-control" required> </textarea>
+                        <div class="invalid-feedback">need short description</div>
+                    </div>
+
+                    <button class="btn btn-success" style="background-color: #376f9a;"> Sign-Up</button>
+                 </form>
+
+                <p class="text-center mt-3">Already have an account? <a href="/login">Log in</a></p>
+            </div>
+</div>
+
